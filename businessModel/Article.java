@@ -3,12 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication4;
+package businessModel;
 
-/**
- *
- * @author Ssive
- */
 
 public class Article extends Document{
 

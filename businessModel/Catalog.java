@@ -3,21 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication4;
 
-/**
- *
- * @author Ssive
- */
+package businessModel;
 import java.awt.Desktop;
 import java.io.*;
 import java.util.*;
 import java.util.List;
-
-
+import javaapplication5.*
+;
 public class Catalog implements java.io.Serializable {
 
-    private ArrayList<Document> myDocuments ;
+    public ArrayList<Document> myDocuments ;
     
     public Catalog() {
         this.myDocuments = new ArrayList<>();
@@ -49,6 +45,7 @@ public class Catalog implements java.io.Serializable {
         for (int i = 0; i < size; i++) {
             System.out.println(this.myDocuments.get(i));
         }
+        
     }
     
     public void save(String path) {

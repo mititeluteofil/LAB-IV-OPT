@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication4;
-
-/**
- *
- * @author Ssive
- */
+package businessModel;
 import java.util.*;
 import java.nio.file.*;
 import java.io.Serializable;
 import java.io.*;
-public abstract class Document implements Serializable{
+public  class Document implements Serializable{
 
 	protected String title;
 	protected List<String> author = new ArrayList<String>();
@@ -27,6 +22,12 @@ public abstract class Document implements Serializable{
 		for (int i = 0 ; i < authors.length; i++) {
 			this.author.add(authors[i]);
 		}
+	}
+	public Document(String title, String pathIn, int year) {
+		this.title = title;
+		this.path = pathIn;
+		this.year = year;
+		
 	}
 	public Document(String title, String pathIn) {
 		this.title = title;

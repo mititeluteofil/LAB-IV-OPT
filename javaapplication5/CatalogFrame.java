@@ -2,14 +2,15 @@
 package javaapplication5;
 
 import java.awt.BorderLayout;
+import businessModel.*;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 
 public class CatalogFrame extends JFrame {
     DocumentForm form = new DocumentForm(this);
-    CatalogList list = new CatalogList();
+    CatalogList list = new CatalogList(this);
     ControlPanel control = new ControlPanel(this);       
-   	
+   	Catalog catalog = new Catalog();
     public CatalogFrame() {
         super("Visual Document Manager");
         init();
