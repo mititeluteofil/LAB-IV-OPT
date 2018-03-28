@@ -6,7 +6,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javax.swing.BorderFactory;
 import javax.swing.SpinnerNumberModel;
-import businessModel.*;
+
 
 public class DocumentForm extends javax.swing.JPanel {
 
@@ -14,7 +14,6 @@ public class DocumentForm extends javax.swing.JPanel {
     String titleInput;
     String pathInput;
     int yearInput;
-    Document document;
     Boolean isPlaying = false;
     
     String bip = "bip.mp3";
@@ -30,7 +29,7 @@ public class DocumentForm extends javax.swing.JPanel {
     }
 
     //Cod generat automat pentru pozitionare
-    
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -67,8 +66,7 @@ public class DocumentForm extends javax.swing.JPanel {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
             }
-        }
-        );
+        });
 
         toggleButton.setText("Music");
         toggleButton.addActionListener(new java.awt.event.ActionListener() {
@@ -149,8 +147,6 @@ public class DocumentForm extends javax.swing.JPanel {
            else
            {
               frame.addToList(titleInput+" ," + yearInput + " [" + pathInput + "]");
-              document = new Document(titleInput,pathInput,yearInput); 
-              frame.list.addDocument(document);
            }
        }
        

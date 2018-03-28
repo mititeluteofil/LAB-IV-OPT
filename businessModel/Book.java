@@ -3,7 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package businessModel;
+package javaapplication4;
+
+/**
+ *
+ * @author Ssive
+ */
 public class Book extends Document{
 	
 	public Book(String title, String path, int year , String...authors) {
