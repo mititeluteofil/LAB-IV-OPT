@@ -13,12 +13,18 @@ import javaapplication5.*
 ;
 public class Catalog implements java.io.Serializable {
 
-    public ArrayList<Document> myDocuments ;
+    private ArrayList<Document> myDocuments ;
     
     public Catalog() {
         this.myDocuments = new ArrayList<>();
     }
-        
+    public List<Document> getDocuments() {
+        return myDocuments;
+    }
+	
+    public Document getDocument(int i) {
+		return this.myDocuments.get(i);
+	}
     public void open(String path) {
         try {
             Desktop desktop = null;
@@ -32,10 +38,6 @@ public class Catalog implements java.io.Serializable {
         }
     }
     
-    public List<Document> getDocuments() {
-        return myDocuments;
-    }
-	
     public void add(Document doc) {
         myDocuments.add(doc);
     }

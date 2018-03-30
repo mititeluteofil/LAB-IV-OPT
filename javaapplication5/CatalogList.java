@@ -8,7 +8,7 @@ import businessModel.Document;
 
 
 public class CatalogList extends JList {
-    DefaultListModel model = new DefaultListModel<>();
+    DefaultListModel<String> model = new DefaultListModel<>();
 	CatalogFrame frame;
     public CatalogList(CatalogFrame frame) {
     	this.frame = frame;

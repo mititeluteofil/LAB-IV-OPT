@@ -10,6 +10,8 @@ import java.io.Serializable;
 import java.io.*;
 public  class Document implements Serializable{
 
+	private static final long serialVersionUID = 324110562575759384L;
+	
 	protected String title;
 	protected List<String> author = new ArrayList<String>();
 	protected String path;

@@ -28,5 +28,6 @@ public class CatalogFrame extends JFrame {
     public void addToList(String item) 
     {
         list.addDocument(item);
+        
     }
 }

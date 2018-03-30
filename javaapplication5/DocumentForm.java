@@ -15,11 +15,7 @@ public class DocumentForm extends javax.swing.JPanel {
     String pathInput;
     int yearInput;
     Document document;
-    Boolean isPlaying = false;
     
-    String bip = "bip.mp3";
-    Media hit = new Media(new File(bip).toURI().toString());
-    MediaPlayer mediaPlayer = new MediaPlayer(hit);
     
     public DocumentForm(CatalogFrame frame) {
         this.frame = frame;
@@ -42,7 +38,7 @@ public class DocumentForm extends javax.swing.JPanel {
         yearSpinner = new javax.swing.JSpinner(
             new SpinnerNumberModel(1950, 1900, 2017, 1));
         addButton = new javax.swing.JButton();
-        toggleButton = new javax.swing.JToggleButton();
+        
 
         titleLabel.setText("Title of the document:");
 
@@ -70,13 +66,7 @@ public class DocumentForm extends javax.swing.JPanel {
         }
         );
 
-        toggleButton.setText("Music");
-        toggleButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                toggleButtonActionPerformed(evt);
-            }
-        });
-
+ 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -96,7 +86,7 @@ public class DocumentForm extends javax.swing.JPanel {
                                 .addComponent(yearSpinner))
                             .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(toggleButton)
+
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 695, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -116,10 +106,9 @@ public class DocumentForm extends javax.swing.JPanel {
                     .addComponent(yearSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addButton)
-                    .addComponent(toggleButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+                    .addComponent(addButton))
+                )
+       );
     }// </editor-fold>//GEN-END:initComponents
     //Finalul codului generat automat
     
@@ -149,23 +138,12 @@ public class DocumentForm extends javax.swing.JPanel {
            else
            {
               frame.addToList(titleInput+" ," + yearInput + " [" + pathInput + "]");
-              document = new Document(titleInput,pathInput,yearInput); 
+              document = new Document(titleInput," [" + pathInput + "]",yearInput); 
               frame.list.addDocument(document);
            }
        }
        
     }//GEN-LAST:event_addButtonActionPerformed
-
-    private void toggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleButtonActionPerformed
-        if(isPlaying == false){
-            mediaPlayer.play();
-            isPlaying = true;
-        }
-        else{
-            mediaPlayer.pause();
-            isPlaying = false;
-        }
-    }//GEN-LAST:event_toggleButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -47,8 +47,8 @@ public class ControlPanel extends JPanel {
     		frame.catalog = Catalog.load("D:\\Catalog.dat"); 
     		int size = frame.catalog.getDocuments().size();
             for (int i = 0; i < size; i++) {
-            	frame.addToList(frame.catalog.myDocuments.get(i).toString());
-            	System.out.println(frame.catalog.myDocuments.get(i).toString());
+            	frame.list.addDocument(frame.catalog.getDocument(i).toString());
+            	
             }
     		
         }
